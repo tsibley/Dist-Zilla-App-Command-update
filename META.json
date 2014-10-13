@@ -47,6 +47,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/tsibley/Dist-Zilla-App-Command-update/issues"
+      },
+      "homepage" : "https://github.com/tsibley/Dist-Zilla-App-Command-update",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/tsibley/Dist-Zilla-App-Command-update.git",
+         "web" : "https://github.com/tsibley/Dist-Zilla-App-Command-update"
+      }
+   },
    "version" : "0.01"
 }
 
