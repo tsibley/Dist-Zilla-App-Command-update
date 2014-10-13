@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker ;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Blah blah blah",
+  "ABSTRACT" => "A Dist::Zilla (and hence Dist::Milla) command to update generated files",
   "AUTHOR" => "Thomas Sibley <tsibley\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0

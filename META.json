@@ -1,5 +1,5 @@
 {
-   "abstract" : "Blah blah blah",
+   "abstract" : "A Dist::Zilla (and hence Dist::Milla) command to update generated files",
    "author" : [
       "Thomas Sibley <tsibley@cpan.org>"
    ],
