@@ -19,11 +19,13 @@ my %WriteMakefileArgs = (
   "EXE_FILES" => [],
   "LICENSE" => "perl",
   "NAME" => "Dist::Zilla::App::Command::update",
-  "PREREQ_PM" => {},
+  "PREREQ_PM" => {
+    "Dist::Zilla::App" => 0
+  },
   "TEST_REQUIRES" => {
     "Test::More" => "0.96"
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -31,6 +33,7 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Dist::Zilla::App" => 0,
   "Test::More" => "0.96"
 );
 
