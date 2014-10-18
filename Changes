@@ -2,6 +2,9 @@ Revision history for Dist-Zilla-App-Command-update
 
 {{$NEXT}}
 
+0.03  2014-10-17 22:35:08 PDT
+    - Tidier (& faster?) updating.  Thanks, Karen Etheridge!
+
 0.02  2014-10-16 22:57:06 PDT
     - Declare prereq!
 
