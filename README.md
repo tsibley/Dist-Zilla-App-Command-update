@@ -10,11 +10,13 @@ command to update generated files
 
 # DESCRIPTION
 
-This command is simply a nice alias for the following:
+This command is approximated by
 
     $ dzil build --no-tgz
-    $ dzil clean
+    $ rm -rf Your-Package-x.yz/
 
+but it builds inside a temporary directory.  If you've ever used `dzil build
+&& dzil clean` to update generated files, now you can use `dzil update`.
 That's all!
 
 # AUTHOR

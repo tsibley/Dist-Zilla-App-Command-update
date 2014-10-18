@@ -6,15 +6,14 @@ our $VERSION = '0.02';
 
 use Dist::Zilla::App -command;
 
-sub abstract { "update generated files by running `build && clean`" }
+sub abstract { "update generated files by building and then removing the build" }
 
 sub execute {
     my ($self, $opt) = @_;
-
-    for my $cmd (['build', '--no-tgz'], ['clean']) {
-        local @ARGV = (@$cmd);
-        Dist::Milla::App->run;
-    }
+    $self->log("update: building into tmpdir");
+    my ($built_in) = $self->zilla->ensure_built_in_tmpdir;
+    $self->log("update: removing $built_in");
+    $built_in->rmtree;
 }
 
 1;
@@ -34,11 +33,13 @@ command to update generated files
 
 =head1 DESCRIPTION
 
-This command is simply a nice alias for the following:
+This command is approximated by
 
     $ dzil build --no-tgz
-    $ dzil clean
+    $ rm -rf Your-Package-x.yz/
 
+but it builds inside a temporary directory.  If you've ever used C<dzil build
+&& dzil clean> to update generated files, now you can use C<dzil update>.
 That's all!
 
 =head1 AUTHOR
