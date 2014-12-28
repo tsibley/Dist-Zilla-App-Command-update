@@ -5,19 +5,25 @@ command to update generated files
 
 # SYNOPSIS
 
-    $ dzil update
+    $ dzil update [--trial]
     $ milla update    # my use case
 
 # DESCRIPTION
 
 This command is approximated by
 
-    $ dzil build --no-tgz
+    $ dzil build --no-tgz [--trial]
     $ rm -rf Your-Package-x.yz/
 
 but it builds inside a temporary directory.  If you've ever used `dzil build
 && dzil clean` to update generated files, now you can use `dzil update`.
 That's all!
+
+# OPTIONS
+
+## --trial
+
+Build a trial release, as if `dzil build` was called with --trial.
 
 # AUTHOR
 

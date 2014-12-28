@@ -2,6 +2,9 @@ Revision history for Dist-Zilla-App-Command-update
 
 {{$NEXT}}
 
+0.04  2014-12-28 14:01:33 PST
+    - Support --trial to build a trial release
+
 0.03  2014-10-17 22:35:08 PDT
     - Tidier (& faster?) updating.  Thanks, Karen Etheridge!
 
