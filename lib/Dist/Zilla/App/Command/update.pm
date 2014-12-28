@@ -8,8 +8,13 @@ use Dist::Zilla::App -command;
 
 sub abstract { "update generated files by building and then removing the build" }
 
+sub opt_spec {
+  [ 'trial'  => 'build a trial release' ],
+}
+
 sub execute {
     my ($self, $opt) = @_;
+    $self->zilla->is_trial(1) if $opt->trial;
     $self->log("update: building into tmpdir");
     my ($built_in) = $self->zilla->ensure_built_in_tmpdir;
     $self->log("update: removing $built_in");
@@ -28,19 +33,25 @@ command to update generated files
 
 =head1 SYNOPSIS
 
-    $ dzil update
+    $ dzil update [--trial]
     $ milla update    # my use case
 
 =head1 DESCRIPTION
 
 This command is approximated by
 
-    $ dzil build --no-tgz
+    $ dzil build --no-tgz [--trial]
     $ rm -rf Your-Package-x.yz/
 
 but it builds inside a temporary directory.  If you've ever used C<dzil build
 && dzil clean> to update generated files, now you can use C<dzil update>.
 That's all!
+
+=head1 OPTIONS
+
+=head2 --trial
+
+Build a trial release, as if C<dzil build> was called with --trial.
 
 =head1 AUTHOR
 
