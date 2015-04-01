@@ -14,7 +14,11 @@ sub opt_spec {
 
 sub execute {
     my ($self, $opt) = @_;
-    $self->zilla->is_trial(1) if $opt->trial;
+    my $zilla;
+    {
+        local $ENV{TRIAL} = $opt->trial ? 1 : 0;
+        $zilla = $self->zilla;
+    }
     $self->log("update: building into tmpdir");
     my ($built_in) = $self->zilla->ensure_built_in_tmpdir;
     $self->log("update: removing $built_in");
