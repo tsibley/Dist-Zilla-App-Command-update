@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-App-Command-update
 
 {{$NEXT}}
+
+0.05  2015-03-31 19:27:19 PDT
     - Use TRIAL instead of setting is_trial for compatibility with
       future Dist::Zilla versions.  Thanks, David Golden!
 
