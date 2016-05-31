@@ -22,7 +22,9 @@ sub execute {
     $self->log("update: building into tmpdir");
     my ($built_in) = $self->zilla->ensure_built_in_tmpdir;
     $self->log("update: removing $built_in");
-    $built_in->rmtree;
+    my $rmtree = $built_in->can("remove_tree")  # ≥ 6.000 is Path::Tiny
+              || $built_in->can("rmtree");      # < 6.000 is Path::Class::Dir
+    $rmtree->($built_in);
 }
 
 1;
