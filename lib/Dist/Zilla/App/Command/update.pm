@@ -2,7 +2,7 @@ package Dist::Zilla::App::Command::update;
 
 use strict;
 use warnings;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use Dist::Zilla::App -command;
 

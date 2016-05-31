@@ -2,6 +2,10 @@ Revision history for Dist-Zilla-App-Command-update
 
 {{$NEXT}}
 
+0.06  2016-05-31 11:41:28 PDT
+    - Compatibility with Dist::Zilla 6.000's change from Path::Class::Dir
+      (rmtree) to Path::Tiny (remove_tree).
+
 0.05  2015-03-31 19:27:19 PDT
     - Use TRIAL instead of setting is_trial for compatibility with
       future Dist::Zilla versions.  Thanks, David Golden!
